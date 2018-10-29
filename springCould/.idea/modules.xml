@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/admin-server/admin-server.iml" filepath="$PROJECT_DIR$/admin-server/admin-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biz-server/biz-server.iml" filepath="$PROJECT_DIR$/biz-server/biz-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springCould.iml" filepath="$PROJECT_DIR$/springCould.iml" />
+    </modules>
+  </component>
+</project>

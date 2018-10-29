@@ -1,0 +1,22 @@
+#由于spring-boot默认的端口为8080且不带上下文根路径 设置tomcat端口，及项目上下文
+server:
+  port: 10002
+  servlet:
+     context-path: /adminServer
+     session:
+        timeout: 5000ms
+  tomcat:
+     uri-encoding: UTF-8
+
+spring:
+    application:
+        name: admin-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10086/eureka/
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+    instance-id: 127.0.0.1:${server.port}${server.servlet.context-path}  #在信息列表时显示主机名称
+    status-page-url: http://127.0.0.1:${server.port}${server.servlet.context-path}/swagger-ui.html

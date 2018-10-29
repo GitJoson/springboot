@@ -1,0 +1,83 @@
+#由于spring-boot默认的端口为8080且不带上下文根路径 设置tomcat端口，及项目上下文
+server:
+  port: 10001
+  servlet:
+     context-path: /bizServer
+     session:
+        timeout: 5000ms
+  tomcat:
+     uri-encoding: UTF-8
+
+swagger2:
+    base:
+      package: com.json.core.action
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10086/eureka/
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+    instance-id: 127.0.0.1:${server.port}${server.servlet.context-path}  #在信息列表时显示主机名称
+    status-page-url: http://127.0.0.1:${server.port}${server.servlet.context-path}/swagger-ui.html
+
+#实体类扫描包
+mybatis:
+  type-aliases-package: com.json.core.domain
+#Mapper.xml文件扫描目录
+  mapper-locations: classpath:mapper/*.xml
+#驼峰命名
+  configuratio:
+     mapUnderscoreToCamelCase: true
+#tkmapper 工具类
+mapper:
+  mappers: com.json.core.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+
+spring:
+    application:
+        name: biz-server
+    datasource:
+        max-idle: 10
+        max-wait: 10000
+        min-idle: 5
+        initial-size: 5
+        url: jdbc:mysql://192.168.1.86:3306/testjson
+        username: root
+        password: root
+        tomcat:
+           driver-class-name: com.mysql.jdbc.Driver
+    #Spring-boot 连接单机版Redis 的配置
+    # REDIS (RedisProperties)
+    # Redis数据库索引（默认为0）
+    # Redis服务器地址
+    # Redis服务器连接端口
+    # Redis服务器连接密码（默认为空）
+    # 连接池最大连接数（使用负值表示没有限制）
+    # 连接池最大阻塞等待时间（使用负值表示没有限制）
+    # 连接池中的最大空闲连接
+    # 连接池中的最小空闲连接
+    # 连接超时时间（毫秒）
+    redis:
+       database: 1
+       host: 127.0.0.1
+       port: 6379
+       password:
+       timeout: 5000ms
+       jedis:
+          pool:
+             max-active: 6666
+             max-wait: -1ms
+             max-idle: 666
+             min-idle: 0
+    #加入mq配置
+    rabbitmq:
+         host: 127.0.0.1
+         port: 5672
+         username: guest
+         password: guest
+         publisher-confirms: true
+         virtual-host: /
