@@ -105,14 +105,14 @@
 		</dependency>-->
 
 		<!--引入 正确配置redis-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
-			<!--此段需要注释要不然启动会报错-->
-			<!--<scope>provided</scope>
-			<optional>true</optional>-->
+			&lt;!&ndash;此段需要注释要不然启动会报错&ndash;&gt;
+			&lt;!&ndash;<scope>provided</scope>
+			<optional>true</optional>&ndash;&gt;
 		</dependency>
-
+-->
 		<!--整合Swagger2-->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -134,10 +134,10 @@
 		</dependency>
 
 		<!--引入rabbitMQ依赖-->
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
+		</dependency>-->
 
 
 	</dependencies>

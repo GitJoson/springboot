@@ -19,6 +19,7 @@
     <module>eureka-server</module>
     <module>biz-server</module>
     <module>admin-server</module>
+    <!--<module>core-common</module>-->
   </modules>
 
   <properties>

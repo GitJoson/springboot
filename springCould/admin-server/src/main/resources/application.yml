@@ -8,9 +8,9 @@ server:
   tomcat:
      uri-encoding: UTF-8
 
-spring:
-    application:
-        name: admin-server
+swagger2:
+    base:
+      package: com.core.controler
 
 eureka:
   client:
@@ -20,3 +20,28 @@ eureka:
     prefer-ip-address: true #以IP地址注册到服务中心
     instance-id: 127.0.0.1:${server.port}${server.servlet.context-path}  #在信息列表时显示主机名称
     status-page-url: http://127.0.0.1:${server.port}${server.servlet.context-path}/swagger-ui.html
+
+spring:
+    application:
+        name: admin-server
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://192.168.1.86:3306/testjson
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+        max-idle: 10
+        max-wait: 10000
+        min-idle: 5
+        initial-size: 5
+
+#mybatis-plus 配置
+mybatis-plus.mapper-locations: classpath:mapper/*/*Mapper.xml
+mybatis-plus.typeAliasesPackage: com.core.entity
+
+#代码生成器配置
+base_dir: E://learnDemo//spring-boot-mybatis-plus//src//main//java//
+user_name: root;
+pass_word: root;
+driver_name: com.mysql.jdbc.Driver;
+database_url: jdbc:mysql://192.168.1.86:3306/testjson?characterEncoding=utf8;

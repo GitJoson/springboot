@@ -1,4 +1,4 @@
-package com.json.core.config;
+package com.json.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

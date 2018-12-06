@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan({"com.json.core","com.json.core.redis"})
+@ComponentScan({"com.json.core"})
 @MapperScan("com.json.core.dao")
 public class BizServerApplication {
 

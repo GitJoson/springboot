@@ -15,6 +15,7 @@
     <bytecodeTargetLevel>
       <module name="admin-server" target="1.7" />
       <module name="biz-server" target="1.7" />
+      <module name="core-common" target="1.7" />
       <module name="eureka-server" target="1.7" />
       <module name="springCould" target="1.7" />
     </bytecodeTargetLevel>
